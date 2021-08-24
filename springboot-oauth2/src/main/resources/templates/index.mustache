@@ -1,18 +1,16 @@
 <h1>Springboot Oauth2 실습</h1>
 <div >
     <!--로그인 성공-->
-    {{#userName}}
+    {{#name}} <!--username 또는 userName은 OS사용자 이름을 출력하기 때문에 대체-->
     <p>
-        Logged in as : <span id="user">{{userName}}</span>
+        Logged in as : <span id="user">{{name}}</span>
         <br> <a href="/logout" role="button">Logout</a>
     </p>
-    {{/userName}}
-    {{#email}}
-        <br>email도 있음: {{email}}
-    {{/email}}
-    {{^userName}}
+    {{/name}}
+    {{^name}}
     <!-- 로그인 전 -->
     <a href="/oauth2/authorization/google" role="button">Google Login</a>
-    {{/userName}}
+    <br><a href="/oauth2/authorization/kakao" role="button">Kakao Login</a>
+    {{/name}}
 </div>
 <br>

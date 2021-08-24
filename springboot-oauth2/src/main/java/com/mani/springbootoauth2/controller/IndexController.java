@@ -23,9 +23,7 @@ public class IndexController {
 
         if(user != null){
             log.info("user가 null이 아님:name="+user.getName());
-            // 여기서 김하늬 출력
-            model.addAttribute("userName", user.getName());//{{username}}에 넘겨주는건 이 값이 아닌듯?
-            model.addAttribute("nnnn", "김김김2");  //{{nnnn}}일 땐 넘어감
+            model.addAttribute("name", user.getName());//{{username}}에 넘겨주는건 이 값이 아닌듯?
         }
         return "index";
     }
