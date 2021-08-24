@@ -1,3 +1,7 @@
+### security ###
+application-oauth.properties
+
+### gradle ###
 HELP.md
 .gradle
 build/

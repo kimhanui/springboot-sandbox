@@ -1,0 +1,18 @@
+<h1>Springboot Oauth2 실습</h1>
+<div >
+    <!--로그인 성공-->
+    {{#userName}}
+    <p>
+        Logged in as : <span id="user">{{userName}}</span>
+        <br> <a href="/logout" role="button">Logout</a>
+    </p>
+    {{/userName}}
+    {{#email}}
+        <br>email도 있음: {{email}}
+    {{/email}}
+    {{^userName}}
+    <!-- 로그인 전 -->
+    <a href="/oauth2/authorization/google" role="button">Google Login</a>
+    {{/userName}}
+</div>
+<br>
