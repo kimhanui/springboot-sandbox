@@ -18,11 +18,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model) {
-        log.info("IndexController");
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
-
         if(user != null){
-            log.info("user가 null이 아님:name="+user.getName());
             model.addAttribute("name", user.getName());//{{username}}에 넘겨주는건 이 값이 아닌듯?
         }
         return "index";
