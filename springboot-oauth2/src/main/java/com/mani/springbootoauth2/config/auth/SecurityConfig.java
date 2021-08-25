@@ -17,19 +17,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .headers().frameOptions().disable()
-                .and()
+            .and()
                 .authorizeRequests()
-                .antMatchers("/", "/css/**", "/images/**", //resource/static을 기본경로로 자원에 url로 접근할 수 있다.
-                        "/js/**", "/h2/**").permitAll()
-                .antMatchers("/api/v1/**").hasRole(Role.
-                        USER.name())
-                .anyRequest().authenticated()
-                .and()
+                    .antMatchers("/", "/css/**", "/images/**", //resource/static을 기본경로로 자원에 url로 접근할 수 있다.
+                            "/js/**", "/h2/**").permitAll()
+                    .antMatchers("/api/v1/**").hasRole(Role.
+                            USER.name())
+                    .anyRequest().authenticated()
+            .and()
                 .logout()
-                .logoutSuccessUrl("/")
-                .and()
+                    .logoutSuccessUrl("/")
+            .and()
                 .oauth2Login()
-                .userInfoEndpoint()
-                .userService(customOAuth2UserService);
+                    .userInfoEndpoint()
+                        .userService(customOAuth2UserService);
     }
 }
